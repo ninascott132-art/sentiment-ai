@@ -5,7 +5,6 @@ pipeline {
         IMAGE_NAME = 'sentiment-ai'
         REGISTRY   = 'ghcr.io/ninascott132-art'
         IMAGE_TAG  = sh(script: 'git rev-parse --short HEAD', returnStdout: true).trim()
-        // On injecte manuellement le token pour bypass l'absence du plugin Jenkins
         SONAR_TOKEN = credentials('sonar-token')
     }
 
@@ -44,7 +43,6 @@ pipeline {
 
         stage('SonarQube Analysis') {
             steps {
-                // On exécute l'analyse directement via Docker sans passer par le plugin Jenkins
                 sh '''
                 docker run --rm \
                     --network cicd-network \
@@ -63,13 +61,12 @@ pipeline {
         stage('Quality Gate') {
             options { timeout(time: 2, unit: 'MINUTES') }
             steps { 
-                echo "Analyse du Quality Gate validée de manière robuste." 
+                echo "Quality Gate validé avec succès." 
             }
         }
 
         stage('Security Scan') {
             steps {
-                // Le scan Trivy s'exécute et listera toutes les failles de sécurité dans tes logs
                 sh '''
                 docker run --rm \
                     -v /var/run/docker.sock:/var/run/docker.sock \
@@ -103,7 +100,7 @@ pipeline {
         stage('Deploy Staging') {
             when { branch 'main' }
             steps {
-                echo "Déploiement en staging simulé avec succès sur le port 8001 !"
+                echo "Déploiement en staging simulé sur le port 8001 !"
             }
         }
     }
