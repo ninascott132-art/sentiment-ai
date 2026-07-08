@@ -73,7 +73,7 @@ Tous les services communiquent via un réseau virtuel isolé : `cicd-network`.
 
 ## 📂 Arborescence du projet
 
-\```
+```
 sentiment-ai/
 ├── src/
 │   ├── __init__.py
