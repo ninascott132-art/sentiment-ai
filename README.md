@@ -113,7 +113,7 @@ sentiment-ai/
 
 ## 💻 Installation & lancement en local
 
-\```bash
+```bash
 # 1. Cloner le dépôt
 git clone https://github.com/ninascott132-art/sentiment-ai.git
 cd sentiment-ai
