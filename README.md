@@ -12,7 +12,9 @@
 Mise en place d'une **chaîne CI/CD complète et observée** (9 stages) pour une API REST d'analyse prédictive de sentiments, développée en **Python / FastAPI**.
 
 > **Classe / Promotion :** Master 1 — Cybersécurité, Cloud, Réseaux et Systèmes
+
 > **Membres du groupe 4 :** Nina Merveille Tchamba Nguetgnia · Abdoulahi FALL
+ 
 > **Dépôt GitHub :** https://github.com/ninascott132-art/sentiment-ai.git
 
 ---
@@ -95,7 +97,7 @@ sentiment-ai/
 ├── Dockerfile
 ├── Jenkinsfile
 └── requirements.txt
-\```
+```
 
 ---
 
